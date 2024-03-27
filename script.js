@@ -1,4 +1,16 @@
 //your JS code here.
+let submitBtn = document.getElementById('submit');
+let scoreDiv = document.getElementById('score');
+let score;
+submitBtn.addEventListener('click',(e)=>{
+  score=0;
+  e.preventDefault();
+  for(let i=0;i<questions.length;i++){
+    if(questions[i].answer===userAnswers[i])score++;
+  }
+  localStorage.setItem('score',score);
+  scoreDiv.innerText=`Your score is ${score} out of 5.`;
+})
 
 // Do not change code below this line
 // This code will just display the questions to the screen
